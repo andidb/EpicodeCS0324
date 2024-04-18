@@ -1,0 +1,101 @@
+#include <stdio.h>
+
+int main() {
+    char risposta0, username[15], risposta1, risposta2, risposta3, risposta4;
+    int punteggio = 0;
+    
+    //presentazione gioco
+    printf("************************************************\n");
+    printf("*                                              *\n");
+    printf("*           Benvenuto al quizzone!             *\n");
+    printf("*   Affronterai un quiz a risposta multipla    *\n");
+    printf("* Avrai 3 scelte, solo una sarà quella giusta! *\n");
+    printf("*                                              *\n");
+    printf("************************************************\n");
+    
+    do {
+    
+    //scelta nuova partita o esci dal gioco
+    printf("                                                \n");
+    printf(" a) Nuova partita         b) Esci dal gioco     \n");
+    printf("                                                \n");
+    
+    printf(" Inserisci la tua risposta: \n");
+    scanf("%c", &risposta0);
+    
+    if (risposta0 == 'a') {
+    printf("Iniziamo una nuova partita!\n");
+    
+    //prendiamo username giocatore
+    printf("Inserisci il tuo username prima di iniziare: ");
+    scanf("%s", username);
+    printf("Grande %s, inziamo!", username);
+    punteggio = 0;
+    
+    
+    // Domanda 1
+    printf("Domanda 1: Quanto fa 7 * 8?\n");
+    printf("a) 56\nb) 64\nc) ma che ne so io!\n");
+    printf("Inserisci la tua risposta (a, b o c): ");
+    scanf(" %c", &risposta1);
+    if (risposta1 == 'a') {
+        printf("Esatto!\n");
+        punteggio++;
+    } else {
+        printf("Sbagliato! La risposta corretta era a) 56.\n");
+    }
+
+    // Domanda 2
+    printf("\nDomanda 2: Se una mela costa 1euro + mezza mela, quanto costa una mela?\n");
+    printf("a) 3 euro\nb) 2 euro\nc) 1.5 euro\n");
+    printf("Inserisci la tua risposta (a, b o c): ");
+    scanf(" %c", &risposta2);
+    if (risposta2 == 'b') {
+        printf("Esatto!\n");
+        punteggio++;
+    } else {
+        printf("Sbagliato! La risposta corretta era b) 2 euro.\n");
+    }
+    
+    // Domanda 3
+    printf("\nDomanda 3: Quali di questi e' un nome palidromo?\n");
+    printf("a) Giulio\nb) Ida\nc) Anna\n");
+    printf("Inserisci la tua risposta (a, b o c): ");
+    scanf(" %c", &risposta3);
+    if (risposta3 == 'c') {
+        printf("Esatto!\n");
+        punteggio++;
+    } else {
+        printf("Sbagliato! La risposta corretta era c) Anna.\n");
+    }
+    
+    // Domanda 4
+    printf("\nDomanda 4: Qual e' la capitale dell'Italia?\n");
+    printf("a) Parigi\nb) Berlino\nc) Roma\n");
+    printf("Inserisci la tua risposta (a, b o c): ");
+    scanf(" %c", &risposta4);
+    if (risposta4 == 'c') {
+        printf("Esatto!\n");
+        punteggio++;
+    } else {
+        printf("Sbagliato! La risposta corretta era c) Roma.\n");
+    }
+    
+
+    // Output del punteggio finale
+    printf("\nIl tuo punteggio finale e': %d/4\n", punteggio);
+      
+    
+    } else if (risposta0 != 'b'){
+    printf("Scelta non valida. Riprova\n");
+    } else {
+    printf("Esci dal gioco. Ci vediamo alla prossima!\n");
+    };
+    
+    } while ( risposta0 != 'b');
+        
+    
+    return 0;
+    
+    
+}
